@@ -6,9 +6,11 @@
 
 <h1>{{ post.title }}</h1>
 <small>
-    By {{post.author}} - {{post.created_on}} -
-    <a href="{% url 'update_post' post.pk %}">Edit</a>
+    By {{post.author}} - {{post.created_on}}
+    {% if user.is_authenicated %}
+    - <a href="{% url 'update_post' post.pk %}">Edit</a>
     <a href="{% url 'delete_post' post.pk %}">Delete</a>
+    {% endif %}
 </small>
 <hr>
 <br>
