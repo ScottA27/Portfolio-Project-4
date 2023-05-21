@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from autoslug import AutoSlugField
 
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
@@ -11,7 +12,7 @@ class Post(models.Model):
     ''' The model used for the posts on the blog'''
     title = models.CharField(max_length=200)
     title_tag = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = AutoSlugField(populate_from='title', unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -19,7 +20,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
-    category = models.CharField(max_length=200, default='uncategorised')
+    category = models.CharField(max_length=200, default='Uncategorised')
 
     class Meta:
         ordering = ["-created_on"]
