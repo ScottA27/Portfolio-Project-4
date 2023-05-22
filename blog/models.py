@@ -11,8 +11,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 class Post(models.Model):
     ''' The model used for the posts on the blog'''
     title = models.CharField(max_length=200)
-    title_tag = models.CharField(max_length=200)
-    slug = AutoSlugField(populate_from='title', unique=True)
+    slug = AutoSlugField(populate_from='title', null=False, unique=True, default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()

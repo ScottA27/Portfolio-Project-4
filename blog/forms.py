@@ -13,11 +13,10 @@ for i in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'author', 'category', 'content', 'featured_image', 'status')
+        fields = ('title', 'author', 'category', 'content', 'featured_image', 'status')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
@@ -29,11 +28,10 @@ class PostForm(forms.ModelForm):
 class EditForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'content', 'featured_image', 'status')
+        fields = ('title', 'content', 'featured_image', 'status')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
             # 'author': forms.Select(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
