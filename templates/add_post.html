@@ -13,9 +13,16 @@
         <button class="btn btn-secondary">Post</button>
     </form>
 </div>
+
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("user").value = name;
+</script>
+
 {% else %}
 
 Please Login or Register if you wish to do this action!
+
 {% endif %}
 
 {% endblock %}
