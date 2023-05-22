@@ -13,8 +13,10 @@
         {{ post.author }} - {{ post.created_on }}
         <small>
             {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
             - <a href="{% url 'update_post' post.slug %}">Edit</a>
             <a href="{% url 'delete_post' post.slug %}">Delete</a>
+            {% endif %}
             {% endif %}
         </small>
         <br>

@@ -3,6 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 <h1>Update Post</h1>
 <br>
 <div class="form-group">
@@ -12,6 +13,9 @@
         <button class="btn btn-secondary">Update</button>
     </form>
 </div>
+{% else %}
+Please Login or Register if you wish to do this action!
+{% endif %}
 {% else %}
 
 Please Login or Register if you wish to do this action!
