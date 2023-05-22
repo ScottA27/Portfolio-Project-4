@@ -22,5 +22,15 @@
 <br>
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 
+<br>
+<hr>
+<br>
+<form action="{% url 'like_post' post.slug %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-primary btn-sm">Like</button> -
+    {{ number_of_likes }}Likes
+</form>
+
+
 
 {% endblock %}
