@@ -47,8 +47,25 @@
     {{ number_of_likes }} Likes
     {% endif %}
 
-
 </form>
+<hr>
+<h2>Comments</h2>
+
+{% if not post.comments.all %}
+No Comments Yet... <a href="{% url 'add_comment' post.slug %}">Post Comment</a>
+{% else %}
+<a href="{% url 'add_comment' post.slug %}">Post Comment</a>
+<br><br>
+{% for comment in post.comments.all %}
+<strong>
+    {{ comment.name }} -
+    {{ comment.created_on }}
+</strong>
+<br>
+{{ comment.body }}
+<hr>
+{% endfor %}
+{% endif %}
 
 
 

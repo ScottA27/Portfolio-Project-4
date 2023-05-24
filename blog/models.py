@@ -5,9 +5,6 @@ from django.urls import reverse
 from autoslug import AutoSlugField
 
 
-STATUS = ((0, 'Draft'), (1, 'Published'))
-
-
 class Post(models.Model):
     ''' The model used for the posts on the blog'''
     title = models.CharField(max_length=200)
@@ -35,7 +32,7 @@ class Post(models.Model):
 class Comment(models.Model):
     '''The model used for the comments on the posts in the blog'''
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=100)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
