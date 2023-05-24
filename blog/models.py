@@ -13,11 +13,9 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='title', null=False, unique=True, default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
     category = models.CharField(max_length=200, default='Uncategorized')
 
