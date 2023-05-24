@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 {% block title %}{{ post.title_tag }}{% endblock %}
 
 
@@ -17,6 +18,9 @@
 <hr>
 <br>
 {{ post.content|safe }}
+<div class="image-container">
+    <img src=" {{ post.featured_image.url }}" class="img-fluid">
+</div>
 
 <br>
 <br>
@@ -30,10 +34,12 @@
 
     {% if user.is_authenticated %}
     {% if liked %}
-    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-danger btn-sm">Unlike</button> -
+    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-danger btn-sm">Unlike</button>
+    -
     {{ number_of_likes }} Likes
     {% else %}
-    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-primary btn-sm">Like</button> -
+    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-primary btn-sm">Like</button>
+    -
     {{ number_of_likes }} Likes
     {% endif %}
     {% else %}
