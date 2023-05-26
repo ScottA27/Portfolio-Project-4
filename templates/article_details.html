@@ -10,8 +10,8 @@
     By {{post.author}} - {{post.created_on}}
     {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
-    - <a href="{% url 'update_post' post.slug %}">Edit</a>
-    <a href="{% url 'delete_post' post.slug %}">Delete</a>
+    - <a href="{% url 'update_post' post.slug %}" class="link-dark fw-bold">Edit</a>
+    <a href="{% url 'delete_post' post.slug %}" class="link-dark fw-bold">Delete</a>
     {% endif %}
     {% endif %}
 </small>
@@ -23,11 +23,6 @@
 </div>
 
 <br>
-<br>
-<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-
-<br>
-<hr>
 <br>
 <form action="{% url 'like_post' post.slug %}" method="POST">
     {% csrf_token %}
@@ -43,7 +38,7 @@
     {{ number_of_likes }} Likes
     {% endif %}
     {% else %}
-    <small><a href="{% url 'account_login' %}">Login</a> to like</small> -
+    <small><a href="{% url 'account_login' %}" class="link-dark fw-bold">Login</a> to like</small> -
     {{ number_of_likes }} Likes
     {% endif %}
 
@@ -52,9 +47,9 @@
 <h2>Comments</h2>
 
 {% if not post.comments.all %}
-No Comments Yet... <a href="{% url 'add_comment' post.slug %}">Post Comment</a>
+No Comments Yet... <a href="{% url 'add_comment' post.slug %}" class="link-dark fw-bold">Post Comment</a>
 {% else %}
-<a href="{% url 'add_comment' post.slug %}">Post Comment</a>
+<a href="{% url 'add_comment' post.slug %}" class="link-dark fw-bold">Post Comment</a>
 <br><br>
 {% for comment in post.comments.all %}
 <strong>

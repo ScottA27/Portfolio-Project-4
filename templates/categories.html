@@ -6,22 +6,24 @@
 {% if category_posts %}
 
 <h1>{{ cats }}</h1>
-
-<ul>
+<div class="list-group">
     {% for post in category_posts %}
-    <li><a href="{% url 'article-detail' post.slug %}">{{ post.title }}</a> -
-        {{ post.author }} - {{ post.created_on }}
-        <small>
-            {% if user.is_authenticated %}
-            - <a href="{% url 'update_post' post.slug %}">Edit</a>
-            <a href="{% url 'delete_post' post.slug %}">Delete</a>
-            {% endif %}
-        </small>
-        <br>
-        {{ post.content|slice:":200"|safe }}</li>
+    <div class="list-group-item list-group-item-action list-group-item-light">
+        <div><a href="{% url 'article-detail' post.slug %}" class="link-dark fw-bold">{{ post.title }}</a> -
+            {{ post.author }} - {{ post.created_on }}
+            <small>
+                {% if user.is_authenticated %}
+                - <a href="{% url 'update_post' post.slug %}" class="link-dark fw-bold">Edit</a>
+                <a href="{% url 'delete_post' post.slug %}" class="link-dark fw-bold">Delete</a>
+                {% endif %}
+            </small>
+            <br>
+            {{ post.content|slice:":200"|safe }}
+        </div>
+    </div>
 
     {% endfor %}
-</ul>
+</div>
 
 {% else %}
 <h2>Sorry this page does not exist...</h2>
