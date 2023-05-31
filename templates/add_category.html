@@ -4,9 +4,9 @@
 
 
 {% if user.is_authenticated %}
-<h1>Add Category</h1>
+<h1 class="text-light">Add Category</h1>
 <br>
-<div class="form-group">
+<div class="form-group text-light">
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}

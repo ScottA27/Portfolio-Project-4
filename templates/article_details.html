@@ -5,19 +5,19 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
-<small>
+<h1 class="text-light">{{ post.title }}</h1>
+<small class="text-light">
     By {{post.author}} - {{post.created_on}}
     {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
-    - <a href="{% url 'update_post' post.slug %}" class="link-dark fw-bold">Edit</a>
-    <a href="{% url 'delete_post' post.slug %}" class="link-dark fw-bold">Delete</a>
+    - <a href="{% url 'update_post' post.slug %}" class="link-light fw-bold">Edit</a>
+    <a href="{% url 'delete_post' post.slug %}" class="link-light fw-bold">Delete</a>
     {% endif %}
     {% endif %}
 </small>
 <hr>
 <br>
-{{ post.content|safe }}
+<div class="text-light">{{ post.content|safe }}</div>
 <div class="image-container">
     <img src=" {{ post.featured_image.url }}" class="img-fluid">
 </div>
@@ -29,35 +29,44 @@
 
     {% if user.is_authenticated %}
     {% if liked %}
-    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-danger btn-sm">Unlike</button>
-    -
-    {{ number_of_likes }} Likes
+    <div class="text-light">
+        <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-danger btn-sm">Unlike</button>
+        -
+        {{ number_of_likes }} Likes
+    </div>
     {% else %}
-    <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-primary btn-sm">Like</button>
-    -
-    {{ number_of_likes }} Likes
+    <div class="text-light">
+        <button type="submit" name="post_slug" value="{{ post.slug }}" class="btn btn-primary btn-sm">Like</button>
+
+        -
+        {{ number_of_likes }} Likes
+    </div>
     {% endif %}
     {% else %}
-    <small><a href="{% url 'account_login' %}" class="link-dark fw-bold">Login</a> to like</small> -
+    <small class="text-light"><a href="{% url 'account_login' %}" class="link-light fw-bold">Login</a> to like</small> -
     {{ number_of_likes }} Likes
     {% endif %}
 
 </form>
 <hr>
-<h2>Comments</h2>
+<h2 class="text-light">Comments</h2>
 
 {% if not post.comments.all %}
-No Comments Yet... <a href="{% url 'add_comment' post.slug %}" class="link-dark fw-bold">Post Comment</a>
+<div class="text-light">
+    No Comments Yet... <a href="{% url 'add_comment' post.slug %}" class="link-light fw-bold">Post Comment</a>
+</div>
 {% else %}
-<a href="{% url 'add_comment' post.slug %}" class="link-dark fw-bold">Post Comment</a>
+<a href="{% url 'add_comment' post.slug %}" class="link-light fw-bold">Post Comment</a>
 <br><br>
 {% for comment in post.comments.all %}
-<strong>
+<strong class="text-light">
     {{ comment.name }} -
     {{ comment.created_on }}
 </strong>
 <br>
-{{ comment.body }}
+<div class="text-light">
+    {{ comment.body }}
+</div>
 <hr>
 {% endfor %}
 {% endif %}
