@@ -5,7 +5,7 @@
 
 {% if category_posts %}
 
-<h1 class="text-light">{{ cats }}</h1>
+<h1 class="text-light">{{ cats }} HH</h1>
 <div class="list-group">
     {% for post in category_posts %}
     <div class="list-group-item list-group-item-action list-group-item-light">
@@ -13,8 +13,10 @@
             {{ post.author }} - {{ post.created_on }}
             <small>
                 {% if user.is_authenticated %}
+                {% if user.id == post.author.id %}
                 - <a href="{% url 'update_post' post.slug %}" class="link-dark fw-bold">Edit</a>
                 <a href="{% url 'delete_post' post.slug %}" class="link-dark fw-bold">Delete</a>
+                {% endif %}
                 {% endif %}
             </small>
             <br>
