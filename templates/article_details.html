@@ -38,8 +38,11 @@
     </div>
     {% endif %}
     {% else %}
-    <small class="text-light"><a href="{% url 'account_login' %}" class="link-light fw-bold">Login</a> to like</small> -
-    {{ number_of_likes }} Likes
+    <div class="text-light">
+        <small><a href="{% url 'account_login' %}" class="link-light fw-bold">Login</a> to
+            like</small> -
+        {{ number_of_likes }} Likes
+    </div>
     {% endif %}
 
 </form>
