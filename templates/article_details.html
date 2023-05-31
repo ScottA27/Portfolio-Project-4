@@ -15,16 +15,11 @@
     {% endif %}
     {% endif %}
 </small>
-<hr>
-<br>
-<div class="text-light">{{ post.content|safe }}</div>
+<div class="text-light pt-4">{{ post.content|safe }}</div>
 <div class="image-container">
     <img src=" {{ post.featured_image.url }}" class="img-fluid">
 </div>
-
-<br>
-<br>
-<form action="{% url 'like_post' post.slug %}" method="POST">
+<form class="pt-2" action="{% url 'like_post' post.slug %}" method="POST">
     {% csrf_token %}
 
     {% if user.is_authenticated %}
@@ -48,27 +43,23 @@
     {% endif %}
 
 </form>
-<hr>
-<h2 class="text-light">Comments</h2>
-
-{% if not post.comments.all %}
-<div class="text-light">
-    No Comments Yet... <a href="{% url 'add_comment' post.slug %}" class="link-light fw-bold">Post Comment</a>
-</div>
-{% else %}
+<h2 class="text-light pt-2">Comments</h2>
 <a href="{% url 'add_comment' post.slug %}" class="link-light fw-bold">Post Comment</a>
-<br><br>
-{% for comment in post.comments.all %}
-<strong class="text-light">
-    {{ comment.name }} -
-    {{ comment.created_on }}
-</strong>
-<br>
-<div class="text-light">
-    {{ comment.body }}
+{% if not post.comments.all %}
+<div class="text-light">No Comments Yet...</div>
+{% else %}
+<div class="list-group pt-3">
+    {% for comment in post.comments.all %}
+    <div class="list-group-item list-group-item-action list-group-item-light">
+        <strong class="text-dark">
+            {{ comment.name }} -
+            {{ comment.created_on }}
+        </strong>
+        <br>
+        {{ comment.body }}
+    </div>
+    {% endfor %}
 </div>
-<hr>
-{% endfor %}
 {% endif %}
 
 
