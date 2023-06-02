@@ -32,6 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['kickback-blog-pp4.herokuapp.com', '8000-scotta27-portfolioproje-6j51kf1hjhz.ws-eu98.gitpod.io']
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME') if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 # Application definition
 
