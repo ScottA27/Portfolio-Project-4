@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kickback-blog-pp4.herokuapp.com', 'localhost', '8000-scotta27-portfolioproje-6j51kf1hjhz.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['kickback-blog-pp4.herokuapp.com', '8000-scotta27-portfolioproje-6j51kf1hjhz.ws-eu98.gitpod.io']
 
 
 # Application definition
