@@ -105,6 +105,9 @@ WSGI_APPLICATION = 'kickback.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    # 'default': dj_database_url.config(        # Feel free to alter this value to suit your needs.        
+    # default='postgresql://postgres:postgres@localhost:5432/mysite',
+    # conn_max_age=600)
 }
 
 
