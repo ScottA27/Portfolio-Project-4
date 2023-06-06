@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load cloudinary %}
-{% block title %}{{ post.title_tag }}{% endblock %}
+{% block title %}{{ post.slug }}{% endblock %}
 
 
 {% block content %}
@@ -17,7 +17,7 @@
 </small>
 <div class="text-light pt-4">{{ post.content|safe }}</div>
 <!-- <div class="image-container"> -->
-<img src=" {{ post.featured_image.url }}" class="img-fluid">
+<img alt="post-image" src=" {{ post.featured_image.url }}" class="img-fluid">
 <!-- </div> -->
 <form class="pt-2" action="{% url 'like_post' post.slug %}" method="POST">
     {% csrf_token %}
