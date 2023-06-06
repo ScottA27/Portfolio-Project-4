@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['kickback-blog-pp4.herokuapp.com', '8000-scotta27-portfolioproje-6j51kf1hjhz.ws-eu98.gitpod.io']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:    
+if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'kickback.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    # 'default': dj_database_url.config(        # Feel free to alter this value to suit your needs.        
+    # 'default': dj_database_url.config(        # Feel free to alter this value to suit your needs.
     # default='postgresql://postgres:postgres@localhost:5432/mysite',
     # conn_max_age=600)
 }
