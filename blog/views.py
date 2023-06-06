@@ -56,7 +56,7 @@ class AddCategoryView(CreateView):
 
 
 def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category__iexact=cats.replace('-', ' '))
+    category_posts = Post.objects.filter(category__name__iexact=cats.replace('-', ' '))
     context = {}
     context['cats'] = cats.title().replace('-', ' ')
     context['category_posts'] = category_posts
