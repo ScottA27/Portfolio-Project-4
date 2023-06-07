@@ -16,10 +16,12 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+    <!-- Background Image -->
     <div class="img-fluid" style="background: url('https://res.cloudinary.com/dlklmgobu/image/upload/v1685102259/KickBack%20Blog/timothy-tan-PAe2UhGo-S4-unsplash_jonn58.jpg') no-repeat;
         background-position: center;
         background-size: cover;
         min-height: 100vh;">
+        <!-- Navbar -->
         <nav class=" navbar navbar-expand-lg navbar-dark" style="background-color: green;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">KickBack <i class="fa-regular fa-futbol"></i></a>
@@ -55,12 +57,14 @@
                 </div>
             </div>
         </nav>
+        <!-- Content Block -->
         <div class="container p-3">
             {% block content %}
 
 
             {% endblock %}
         </div>
+        <!-- Footer -->
         <div class="footer-container" style="min-height: 200px;">
             <footer class="fixed-bottom text-center text-white" style="background-color: green;">
                 <!-- Grid container -->
@@ -89,15 +93,11 @@
                             href="https://github.com/ScottA27" role="button" data-mdb-ripple-color="dark"
                             aria-label="Visit my GitHub page (opens in a new tab)"><i class="fab fa-github"></i></a>
                     </div>
-                    <!-- Section: Social media -->
                 </div>
-                <!-- Grid container -->
-
                 <!-- Copyright -->
                 <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                     © 2023 Copyright: ScottA27
                 </div>
-                <!-- Copyright -->
             </footer>
         </div>
     </div>

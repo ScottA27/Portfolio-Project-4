@@ -1,8 +1,8 @@
+:root {
+    background-color: darkgreen;
+}
+
 .btn.btn-variant-1 {
     color: white;
     background-color: green;
-}
-
-body {
-    background-color: darkgreen
 }

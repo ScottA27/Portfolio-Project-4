@@ -14,17 +14,21 @@ creating an account.
 
 ![Techsini Multi Mockup](/docs/readme/techsini-pp4-multi.png)
 
+- - -
 
 ## Contents
+
+
+- - -
 
 ## User Experience
 
 I used a simple design in regards to layout and tried to add more flair with the colours and background image. There is a base green colour
-throughout and a simple background image of a football pitch to compliment the different shade of green.
+throughout and a simple background image of a football pitch to compliment with a different shade of green.
 
 ### Wireframes
 
-I used the recommend [Balsamiq](https://balsamiq.com/wireframes/) to sketch a basic desgin of my project.
+I used the recommended [Balsamiq](https://balsamiq.com/wireframes/) to sketch a basic desgin of my project.
 
 #### Home Page Wireframe
 
@@ -74,6 +78,8 @@ I used the recommend [Balsamiq](https://balsamiq.com/wireframes/) to sketch a ba
 ![blog page](/docs/readme/pp4-login.png)
 </details>
 
+- - -
+
 ## Agile
 
 ### The Ideal User
@@ -100,6 +106,7 @@ I used the recommend [Balsamiq](https://balsamiq.com/wireframes/) to sketch a ba
 - As a Site Admin I can create, read, update and delete posts so that I can manage the blog content
 - As a Site Admin I can search through the posts and categories so that I can find what I'm looking for easily
 
+- - -
 
 ## Logic and Features
 
@@ -123,7 +130,7 @@ Table: **Post**
 | featured_image | CloudinaryField | 'image', default='placeholder' |
 | created_on | DateTimeField | auto_now_add=True |
 | likes | ManyToManyField | User, related_name='blogpost_like', blank=True |
-| category | CharField | max_length=200, default='Uncategorized' |
+| category | ForeignKey | Category, max_length=60, on_delete=models.CASCADE |
 
 ***
 
@@ -144,6 +151,7 @@ Table: **Category**
 | --- | --- | --- |
 | name | CharField | max_length=200 |
 
+- - -
 
 ### Features
 
@@ -298,7 +306,13 @@ Table: **Category**
   ![Blog Page](/docs/readme/kickback-footer.png)
 </details>
 
-***
+### Future Features
+
+1. Ability to connect the comments section to authorized users instead of allowing anyone to comment.
+2. A profile page with all of the users posts.
+3. A dislike button for posts.
+
+- - -
 
 ## Technology Used
 
@@ -322,7 +336,7 @@ HTML, CSS and Python.
 * GitPod - using GitPod terminal to commit to Git and push to GitHub.
 * Balsamiq - to create the wireframes when designing the website.
 * Dev Tools - for testing and troubleshooting.
-* [Font Awesome](https://fontawesome.com/) - to add icons.
+* [Font Awesome](https://fontawesome.com/) - to add social media icons and football in the logo.
 * [Wave](https://wave.webaim.org/) - to test web accessibility.
 * [W3C](https://validator.w3.org/) - HTML validator.
 * [Jigsaw](https://jigsaw.w3.org/css-validator/) - CSS validator.
@@ -330,10 +344,19 @@ HTML, CSS and Python.
 * Heroku - used to deploy the live project.
 * PostgreSQL - database used through heroku.
 
+- - -
 
 ## Testing
 
-***
+### Manual Testing
+
+* All pages have been checked over for bugs and errors, none can be found apart from a timezone issue on posts. All buttons, links and forms
+work 100% as intended.
+
+#### Browser and Responsiveness tests:
+
+* Tests were carried out on desktop using Chrome, Firefox and Microsoft Edge.
+* Tests were carried out on mobile using Safari and Chrome.
 
 ### PEP8
 
@@ -783,4 +806,85 @@ Tests were carried out using [WAVE](https://wave.webaim.org/). There were subtle
   ![Blog Page](/docs/testing/wave-kickback-logout.png)
 </details>
 
+- - -
+
+### Solved Bugs
+
+1. There was a bug with getting slugged title tags for each post being made. I figured it out by using AutoSlugField and populating the title tag from the title.
+
+2. There was an issue with my category title tags as well due to them being generated from Jinja. I spoke with a tutor from Code Institute and we figured out that the field I was calling was incorrect.
+
+3. There was an issue with the comments section of the post pages where I couldn't get the layout how I wanted and the text would show outside of the boxes I wanted them in. I figured this out by using the Bootstrap documentation and some trial and error. I iterated through the comments using a for loop with a div for each one with the styling I desired.
+
+### Unsolved Bugs
+
+1. I have noticed with each post that I make that it is an hour behind, I learned that this is due to the time zone for the database. I tried fixing this so that the site would realise the time zone being used on the device making the posts. However, I couldn't figure it out in the time that I had.
+
+- - -
+
+## Deployment 
+
+The project is deployed using Heroku.
+
+### Create the live database which can be accessed by Heroku:
+
+1. Go to the ElephantSQL dashboard and click the create new instance button on the top right.
+2. Name the plan, select the tiny turtle plan and choose the region that is closest to you then click the review button.
+3. Check the details are all correct and then click create instance in the bottom right.
+4. Go to the dashboard and select the database just created.
+5. Copy the URL.
+
+### Heroku app setup:
+
+1. From the Heroku dashboard, click the new button in the top right corner and select create new app.
+2. Give your app a unique name, select the region that is closest to you and then click the create app button bottom left.
+3. Open the settings tab and create a new config var of DATABASE_URL and paste the database URL you copied from elephantSQL into the value (remove quotation marks from value).
+
+### Prepare env.py and settings.py files
+
+1. In your GitPod workspace, create an env.py file in the main directory and add the DATABASE_URL value and your chosen SECRET_KEY value to the file.
+3. Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+4. Comment out default database configuration then save all files and make migrations.
+5. Add the Cloudinary URL to env.py and the Cloudinary libraries to the list of installed apps.
+6. Add the STATIC files settings
+7. Link the file to the templates directory in Heroku.
+8. Change the templates directory to TEMPLATES_DIR
+9. Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
+
+### Create files / directories
+1. Create a requirements.txt file
+2. Create directories in the main directory
+3. Create a "Procfile" in the main directory and add the following: web: gunicorn project_name.wsgi
+
+### Update Heroku Config Vars
+Add the following Config Vars in Heroku:
+* SECRET_KEY = yoursecretkey
+* CLOUDINARY_URL = URL
+* PORT = 8000
+* DISABLE_COLLECTSTATIC = 1
+* DATABASE_URL = URL
+
+### Deploy
+
+1. Make sure that in the settings.py that DEBUG = True if in development and DEBUG = False if not.
+2. Remove config vars DISABLE_COLLECTSTATIC = 1 from Heroku settings.
+3. Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
+5. Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Please note, manually deployed branches will need re-deploying each time the GitHub repository is updated.
+6. Click 'Open App' to view the deployed live site.
+
+The site should now be up and running.
+
 ***
+
+## Credits
+
+* Code Institute - Blog Walkthrough Project
+* [Codemy Simple Blog with Python and Django](https://www.youtube.com/watch?v=B40bteAMM_M&list=LL&index=1&t=1s&ab_channel=Codemy.com) used the walkthrough as a guide throughout my project for several aspects including the forms, views and templates.
+* Bootstrap
+* MDBootsrap
+* Stack Overflow
+* W3Schools
+* LearDjango
+* Django Docs
+* Traversy Media Python Django 7 Hour Course
+* CI's Slack Community

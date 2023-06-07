@@ -4,7 +4,7 @@
 
 
 {% block content %}
-
+<!-- Title, User and Time Posted -->
 <h1 class="text-light">{{ post.title }}</h1>
 <small class="text-light">
     By {{post.author}} - {{post.created_on}}
@@ -15,10 +15,10 @@
     {% endif %}
     {% endif %}
 </small>
+<!-- Post Content -->
 <div class="text-light pt-4">{{ post.content|safe }}</div>
-<!-- <div class="image-container"> -->
 <img alt="post-image" src=" {{ post.featured_image.url }}" class="img-fluid">
-<!-- </div> -->
+<!-- Like Button -->
 <form class="pt-2" action="{% url 'like_post' post.slug %}" method="POST">
     {% csrf_token %}
 
@@ -46,6 +46,7 @@
     {% endif %}
 
 </form>
+<!-- Comments -->
 <h2 class="text-light pt-2">Comments</h2>
 <a href="{% url 'add_comment' post.slug %}" class="link-light fw-bold">Post Comment</a>
 {% if not post.comments.all %}
