@@ -333,4 +333,454 @@ HTML, CSS and Python.
 
 ## Testing
 
+***
 
+### PEP8
+
+Testing carried out using Code Institutes Python Linter. No errors apart from lines being too long which I have tried to fix.
+
+### Kickback:
+
+* asgi.py
+
+<details>
+    <summary>Click to View asgi.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-asgi.py.png)
+</details>
+
+***
+
+* settings.py
+
+<details>
+    <summary>Click to View settings.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-settings.py.png)
+</details>
+
+***
+
+* urls.py
+
+<details>
+    <summary>Click to View urls.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-urls.py-2.png)
+</details>
+
+***
+
+* wsgi.py
+
+<details>
+    <summary>Click to View wsgi.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-wsgi.py.png)
+</details>
+
+***
+
+### Blog:
+
+* admin.py
+
+<details>
+    <summary>Click to View admin.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-admin.py.png)
+</details>
+
+***
+
+* apps.py
+
+<details>
+    <summary>Click to View apps.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-apps.py.png)
+</details>
+
+***
+
+* forms.py
+
+<details>
+    <summary>Click to View forms.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-forms.py.png)
+</details>
+
+***
+
+* models.py
+
+<details>
+    <summary>Click to View models.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-models.py.png)
+</details>
+
+***
+
+* urls.py
+
+<details>
+    <summary>Click to View urls.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-urls.py.png)
+</details>
+
+***
+
+* views.py
+
+<details>
+    <summary>Click to View views.py</summary>
+
+  ![Blog Page](/docs/testing/kickback-views.py.png)
+</details>
+
+***
+
+### W3C Validator
+
+Tests carried out using [W3C Validator](https://validator.w3.org/) there were no errors in any of the pages.
+
+* Home
+
+<details>
+    <summary>Click to View Home page</summary>
+
+  ![Blog Page](/docs/testing/kickback-home-test.png)
+</details>
+
+***
+
+* Categories
+
+<details>
+    <summary>Click to View Categories</summary>
+
+  ![Blog Page](/docs/testing/kickback-categories-test.png)
+</details>
+
+***
+
+* Category Posts
+
+<details>
+    <summary>Click to View Category Posts</summary>
+
+  ![Blog Page](/docs/testing/kickback-category-posts-test.png)
+</details>
+
+***
+
+* Add Category
+
+<details>
+    <summary>Click to View Add Category</summary>
+
+  ![Blog Page](/docs/testing/kickback-add-category-test.png)
+</details>
+
+***
+
+* Post Details
+
+<details>
+    <summary>Click to View Post Details</summary>
+
+  ![Blog Page](/docs/testing/kickback-post-details-test.png)
+</details>
+
+***
+
+* Add Post
+
+<details>
+    <summary>Click to View Add Post</summary>
+
+  ![Blog Page](/docs/testing/kickback-add-post-test.png)
+</details>
+
+***
+
+* Edit Post
+
+<details>
+    <summary>Click to View Edit Post</summary>
+
+  ![Blog Page](/docs/testing/kickback-edit-post-test.png)
+</details>
+
+***
+
+* Delete Post
+
+<details>
+    <summary>Click to View Delete Post</summary>
+
+  ![Blog Page](/docs/testing/kickback-delete-post-test.png)
+</details>
+
+***
+
+* Register
+
+<details>
+    <summary>Click to View Register</summary>
+
+  ![Blog Page](/docs/testing/kickback-register-test.png)
+</details>
+
+***
+
+* Login
+
+<details>
+    <summary>Click to View Login</summary>
+
+  ![Blog Page](/docs/testing/kickback-login-test.png)
+</details>
+
+***
+
+* Logout
+
+<details>
+    <summary>Click to View Logout</summary>
+
+  ![Blog Page](/docs/testing/kickback-logout-test.png)
+</details>
+
+***
+
+### Lighthouse
+
+Tests were carried out using [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/).
+
+* Home
+
+<details>
+    <summary>Click to View Home</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-home.png)
+</details>
+
+***
+
+* Categories
+
+<details>
+    <summary>Click to View Categories</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-categories.png)
+</details>
+
+***
+
+* Category Posts
+
+<details>
+    <summary>Click to View Category Posts</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-category-posts.png)
+</details>
+
+***
+
+* Add Category
+
+<details>
+    <summary>Click to View Add Category</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-add-category.png)
+</details>
+
+***
+
+* Post Details
+
+<details>
+    <summary>Click to View Post Details</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-post-details.png)
+</details>
+
+***
+
+* Add Post
+
+<details>
+    <summary>Click to View Add Post</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-add-post.png)
+</details>
+
+***
+
+* Edit Post
+
+<details>
+    <summary>Click to View Edit Post</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-edit-post.png)
+</details>
+
+***
+
+* Delete Post
+
+<details>
+    <summary>Click to View Delete Post</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-delete-post.png)
+</details>
+
+***
+
+* Register
+
+<details>
+    <summary>Click to View Register</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-register.png)
+</details>
+
+***
+
+* Login
+
+<details>
+    <summary>Click to View Login</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-login.png)
+</details>
+
+***
+
+* Logout
+
+<details>
+    <summary>Click to View Logout</summary>
+
+  ![Blog Page](/docs/testing/lighthouse-kickback-logout.png)
+</details>
+
+***
+
+### Accessibility
+
+Tests were carried out using [WAVE](https://wave.webaim.org/). There were subtle errors with contrast because of my use of a background image across the site, the test doesn't pick up on this so it is essentially throwing a false error.
+
+* Home
+
+<details>
+    <summary>Click to View Home</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-home.png)
+</details>
+
+***
+
+* Categories
+
+<details>
+    <summary>Click to View Categories</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-categories.png)
+</details>
+
+***
+
+* Category Posts
+
+<details>
+    <summary>Click to View Category Posts</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-category-posts.png)
+</details>
+
+***
+
+* Add Category
+
+<details>
+    <summary>Click to View Add Category</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-add-category.png)
+</details>
+
+***
+
+* Post Details
+
+<details>
+    <summary>Click to View Post Details</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-post-details.png)
+</details>
+
+***
+
+* Add Post
+
+<details>
+    <summary>Click to View Add Post</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-add-post.png)
+</details>
+
+***
+
+* Edit Post
+
+<details>
+    <summary>Click to View Edit Post</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-edit-post.png)
+</details>
+
+***
+
+* Delete Post
+
+<details>
+    <summary>Click to View Delete Post</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-delete-post.png)
+</details>
+
+***
+
+* Register
+
+<details>
+    <summary>Click to View Register</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-register.png)
+</details>
+
+***
+
+* Login
+
+<details>
+    <summary>Click to View Login</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-login.png)
+</details>
+
+***
+
+* Logout
+
+<details>
+    <summary>Click to View Logout</summary>
+
+  ![Blog Page](/docs/testing/wave-kickback-logout.png)
+</details>
+
+***
